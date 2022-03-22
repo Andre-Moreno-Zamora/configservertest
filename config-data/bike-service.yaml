@@ -1,5 +1,5 @@
 server:
-  port: 8003
+  port: ${PORT:${SERVER_PORT:0}} # Asignar puerto de forma dinamica. Con el "0" lo que estamos indicando es que busque la lista de puertos disponibles, para asignarle uno aleatoriamente
 eureka:
   client:
     fetch-registry: true
@@ -7,4 +7,4 @@ eureka:
     service-url:
       default-zone: http://localhost:8761/eureka
     instance:
-      hostname: localhost
+      instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}} # El primero es el nombre del microservicio, el segundo es un hash o id de la instancia, después de los dos puntos lo que se hace es asignarle un número aleatorio para que se identifiquen las distintas instancias del microservicio
