@@ -6,5 +6,5 @@ eureka:
     register-with-eureka: true
     service-url:
       default-zone: http://localhost:8761/eureka
-    instance:
-      instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}} # El primero es el nombre del microservicio, el segundo es un hash o id de la instancia, después de los dos puntos lo que se hace es asignarle un número aleatorio para que se identifiquen las distintas instancias del microservicio
+  instance:
+    instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}} # El primero es el nombre del microservicio, el segundo es un hash o id de la instancia, después de los dos puntos lo que se hace es asignarle un número aleatorio para que se identifiquen las distintas instancias del microservicio
